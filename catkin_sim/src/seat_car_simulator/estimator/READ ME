@@ -1,0 +1,44 @@
+ROS
+
+Package Estimator -> include;
+
+in include the header of the library contatins all the classes that estimate without slam (only comunicate with the ROS simulator) it's a header only library due to being a littly bit messy working with 
+standard libraries (cpp + hpp) and classes. 
+
+
+Package Estimator -> srv;
+
+service lmi_data used to load info from matlab to cpp
+
+Package Estimator -> msg;
+
+messages used to com between Python nodes and cpp nodes
+
+Package Estimator -> src;
+
+1) class_ekf -> classic iterative ekf
+2) DealData.py -> node used to subscribe and store information of the system
+3) est_lib.cpp -> code required in the implementation of the library, it's mainly empty. 
+4) parseTopics.cpp -> node used to gather information from gazebo regarding landmarks using tf. 
+5) parseTopics_ALVAR -> node used to gather information from gazebo regarding landmarks using alvar makers.
+6) SetLinkState.py -> node used to test the comunication with gazebo
+7) TimeSync.cpp -> Temporal aligment between gazebo and ros simulators, even with this implementation there's a certain drift. Everything should be implemented in gazebo.
+8) zekf -> node used to take estimators from the library and run them. 
+9) zekf_SLAMi -> node where the SLAM problem is solved using iterative KF/ZKF.
+
+package model_car -> based on IRI seat car challenge repo, use simL.launch to run gazebo and rviz environtments with the current set up.
+
+NOTE:
+
+This code is not ready to drive the vehicle, as the aim was to test estimation the controller had acces to ground truth data. If you want to use this estimators along with the control modify control.launch so that the estimator is not executed and uncoment the parts of code labeled as "Close Estimation Loop". Another remark is that the estimators are set to run for a certain number of iterations, to change that modify the while loop. 
+
+TODO: 
+
+Model properly the vehicle in gazebo, there is a basic model and don't know if it does not work due to the model itself or it's parameters. 
+If I'm not mistaken we need to introduce certain low level control (PID or embedd those dynamics in the MPC) as gazebo takes vel and steer refs. 
+
+
+ 
+
+
+  

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot name="trafficlights" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.1415926535897931" />
+  <xacro:include filename="$(find road_description)/urdf/trafficlight/trafficlight_macro.xacro" />
+  <xacro:include filename="$(find road_description)/urdf/trafficlight/signal_macro.xacro" />
+
+  <link name="$(arg parent)">
+  </link>
+<!-- 
+  <xacro:trafficlight name="semaphore_roundabout1"
+                      parent="$(arg parent)"
+                      tag_dae="alvar2"
+                      light_color="green"
+                      light_material="Gazebo/RedGlow"
+                      light_material2="Gazebo/GreenGlow">
+    <origin xyz="1.49 -3.64 0" rpy="0 0 ${PI/6}"/>
+  </xacro:trafficlight>
+  -->
+
+</robot>

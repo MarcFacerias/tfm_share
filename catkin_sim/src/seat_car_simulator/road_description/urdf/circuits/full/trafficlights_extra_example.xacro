@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot name="trafficlights" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.1415926535897931" />
+  <xacro:include filename="$(find road_description)/urdf/trafficlight/trafficlight_macro.xacro" />
+  <xacro:include filename="$(find road_description)/urdf/trafficlight/signal_macro.xacro" />
+  <xacro:include filename="$(find road_description)/urdf/trafficlight/signal_square_macro.xacro" />
+  <xacro:include filename="$(find road_description)/urdf/trafficlight/landmark_macro.xacro" />
+
+  <link name="$(arg parent)">
+  </link>
+
+  <!-- <xacro:signal_square name="roundabout1"
+                parent="$(arg parent)"
+                tag_dae="alvar5"
+                signal_dae="roundabout">
+    <origin xyz="1.5 -0.5 0" rpy="0 0 ${PI}"/>
+  </xacro:signal_square> -->
+
+  <!-- <xacro:signal_square name="roundabout2"
+                parent="$(arg parent)"
+                tag_dae="alvar5"
+                signal_dae="roundabout">
+    <origin xyz="1.96 -5.58 0" rpy="0 0 ${-PI/6}"/>
+  </xacro:signal_square>
+
+  <xacro:signal_square name="stop1"
+                parent="$(arg parent)"
+                tag_dae="alvar6"
+                signal_dae="stop">
+    <origin xyz="-3.76 -0.57 0" rpy="0 0 -${PI/4}"/>
+  </xacro:signal_square> -->
+
+  <xacro:landmark name="landmark1"
+                parent="$(arg parent)"
+                tag_dae1="alvar11"
+                tag_dae2="alvar12"
+                tag_dae3="alvar13"
+                tag_dae4="alvar14">
+    <origin xyz="2.5 -1.5 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark>
+
+    <xacro:landmark name="landmark2"
+                parent="$(arg parent)"
+                tag_dae1="alvar21"
+                tag_dae2="alvar22"
+                tag_dae3="alvar23"
+                tag_dae4="alvar24">
+    <origin xyz="2.5 -4.5 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark>
+
+  <xacro:landmark name="landmark3"
+                parent="$(arg parent)"
+                tag_dae1="alvar31"
+                tag_dae2="alvar32"
+                tag_dae3="alvar33"
+                tag_dae4="alvar34">
+    <origin xyz="-0.5 -6.0 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark>
+
+  <xacro:landmark name="landmark4"
+                parent="$(arg parent)"
+                tag_dae1="alvar41"
+                tag_dae2="alvar42"
+                tag_dae3="alvar43"
+                tag_dae4="alvar44">
+    <origin xyz="-3 -1 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark>
+
+  <xacro:landmark name="landmark5"
+                parent="$(arg parent)"
+                tag_dae1="alvar51"
+                tag_dae2="alvar52"
+                tag_dae3="alvar53"
+                tag_dae4="alvar54">
+    <origin xyz="-3 -3.5 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark>
+
+  <xacro:landmark name="landmark6"
+                parent="$(arg parent)"
+                tag_dae1="alvar61"
+                tag_dae2="alvar62"
+                tag_dae3="alvar63"
+                tag_dae4="alvar64">
+    <origin xyz="-3 -6 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark>
+
+ <xacro:landmark name="landmark7"
+                parent="$(arg parent)"
+                tag_dae1="alvar71"
+                tag_dae2="alvar72"
+                tag_dae3="alvar73"
+                tag_dae4="alvar74">
+    <origin xyz="0 -1 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark> 
+  <!-- <xacro:landmark name="landmark8"
+                parent="$(arg parent)"
+                tag_dae1="alvar81"
+                tag_dae2="alvar82"
+                tag_dae3="alvar83"
+                tag_dae4="alvar84">
+    <origin xyz="8.8 -12.7 0" rpy="0 0 ${PI}"/>
+  </xacro:landmark> -->
+
+
+
+  <!-- <xacro:signal name="signal_left1"
+                parent="$(arg parent)"
+                tag_dae="alvar3"
+                signal_dae="arrow_left">
+    <origin xyz="1.83 -5.53 0" rpy="0 0 ${-4*PI/6}"/>
+  </xacro:signal>
+
+  <xacro:signal name="signal_right1"
+                parent="$(arg parent)"
+                tag_dae="alvar2"
+                signal_dae="arrow_right">
+    <origin xyz="1.36 -3.73 0" rpy="0 0 ${-2*PI/6}"/>
+  </xacro:signal> -->
+
+</robot>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2399ccac-2090-4cb0-9bf0-9da658e17fed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../seat_car_description/urdf/include/sensors/front_rgb_camera2.gazebo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../road_description/launch/spawn_circuit.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../road_description/launch/spawn_circuit.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../road_description/launch/spawn_perimeter_full.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../road_description/launch/spawn_perimeter_full.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../road_description/launch/spawn_road.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../road_description/launch/spawn_road.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../road_description/urdf/circuits/full/trafficlights_extra_example.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../road_description/urdf/circuits/full/trafficlights_extra_example.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../road_description/urdf/trafficlight/dae/alvar0.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../road_description/urdf/trafficlight/trafficlight_macro.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../road_description/urdf/trafficlight/trafficlight_macro.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seat_car_description/config/seat_car.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../seat_car_description/config/seat_car.rviz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seat_car_description/urdf/car.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../seat_car_description/urdf/car.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seat_car_description/urdf/include/sensors.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../seat_car_description/urdf/include/sensors.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seat_car_description/urdf/include/sensors/front_rgbd_camera.gazebo" beforeDir="false" afterPath="$PROJECT_DIR$/../seat_car_description/urdf/include/sensors/front_rgbd_camera.gazebo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch/sim.launch" beforeDir="false" afterPath="$PROJECT_DIR$/launch/sim.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/empty.world" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/empty.world" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bBCrITCs6Ru9VjmAxco5XkmCeG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2399ccac-2090-4cb0-9bf0-9da658e17fed" name="Default Changelist" comment="" />
+      <created>1588096296919</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588096296919</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="743" y="297" width="424" height="477" key="FileChooserDialogImpl" timestamp="1588669397444">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="297" width="424" height="477" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1588669397444" />
+  </component>
+</project>

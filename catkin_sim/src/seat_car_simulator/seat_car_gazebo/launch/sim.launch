@@ -1,0 +1,79 @@
+<!-- -->
+<launch>
+
+  <arg name="circuit"  default="full"/>
+  <arg name="spawn_circuit" default="true"/>
+  <arg name="name"  default="seat_car"/>
+  <arg name="model" default="car"/>
+  <arg name="world" default="empty"/> <!-- empty, building -->
+  <arg name="gazebo_gui" default="true"/>
+
+  <!-- Normal -->
+  <arg name="car_x"    default="0.25"/>
+  <arg name="car_y"    default="-0.2"/>
+  <arg name="car_yaw"  default="0.0"/>
+
+  <!-- L -->
+  <!-- <arg name="car_x"    default="4.0"/>
+  <arg name="car_y"    default="-10.12"/>
+  <arg name="car_yaw"  default="-3.13"/> -->
+
+  <arg name="fake_localization"  default="true"/>
+  <arg name="rviz"       default="true"/>
+  <arg name="rviz_file"  default="$(arg name)"/>
+
+  <include file="$(find seat_car_gazebo)/launch/world.launch">
+    <arg name="world" value="$(arg world)"/>
+    <arg name="gui"   value="$(arg gazebo_gui)"/>
+  </include>
+
+  <include file="$(find seat_car_gazebo)/launch/detectMarkersD.launch">
+    <arg name="cam_image_topic" default="/camera1/depth/points" />
+  	<arg name="cam_info_topic" default="/camera1/depth/camera_info" />
+    <arg name="name" default="camera1_alvar" />
+  </include>
+
+  <include file="$(find seat_car_gazebo)/launch/detectMarkersD.launch">
+    <arg name="cam_image_topic" default="/camera2/depth/points" />
+    <arg name="cam_info_topic" default="/camera2/depth/camera_info" />
+    <arg name="name" default="camera2_alvar" />
+  </include>
+
+  <include file="$(find seat_car_gazebo)/launch/detectMarkersD.launch">
+    <arg name="cam_image_topic" default="/camera3/depth/points" />
+    <arg name="cam_info_topic" default="/camera3/depth/camera_info" />
+    <arg name="name" default="camera3_alvar" />
+  </include>
+
+  <include file="$(find seat_car_gazebo)/launch/detectMarkersD.launch">
+    <arg name="cam_image_topic" default="/camera4/depth/points" />
+    <arg name="cam_info_topic" default="/camera4/depth/camera_info" />
+    <arg name="name" default="camera4_alvar" />
+  </include>
+
+  <include if="$(arg spawn_circuit)" file="$(find road_description)/launch/spawn_circuit.launch">
+    <arg name="circuit" value="$(arg circuit)"/>
+    <arg name="spawn_road"          value="false"/>
+    <arg name="spawn_ceiling"       value="false"/>
+    <arg name="spawn_trafficlights" value="true"/>
+    <arg name="spawn_obstacles"     value="false"/>
+    <arg name="spawn_perimeter"     value="false"/>
+    <arg name="spawn_buildings"     value="false"/>
+  </include>
+
+  <include file="$(find seat_car_description)/launch/spawn_car.launch">
+    <arg name="name"  value="$(arg name)"/>
+    <arg name="model" value="$(arg model)"/>
+    <arg name="x"     value="$(arg car_x)"/>
+    <arg name="y"     value="$(arg car_y)"/>
+    <arg name="yaw"   value="$(arg car_yaw)"/>
+    <arg name="fake_localization" value="$(arg fake_localization)"/>
+  </include>
+
+  <node name="rviz"
+        pkg="rviz"
+        type="rviz"
+        if="$(arg rviz)"
+        args="-d $(find seat_car_description)/config/$(arg rviz_file).rviz" />
+
+</launch>

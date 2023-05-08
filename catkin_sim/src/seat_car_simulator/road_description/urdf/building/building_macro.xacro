@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<root xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--<xacro:property name="M_PI" value="3.1415926535897931"/>-->
+  <xacro:include filename="$(find road_description)/urdf/materials.xacro" />
+  
+  <xacro:macro name="building" 
+               params="name:=${name}                
+                       parent:=${name}_base_link 
+                       *origin
+                       length:=${length}
+                       width:=${width}
+                       height:=${height}
+                       ">
+    
+    <joint name="joint_${parent}_to_${name}" type="fixed">
+      <xacro:insert_block name="origin" /> 
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+    </joint>
+
+    <link name="${name}_link">
+      <inertial>
+        <mass value="100" />
+        <origin xyz="0 0 0" />
+        <inertia 
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0" 
+          izz="1.0" />
+      </inertial>
+    </link>
+
+    <link name="${name}_body">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${length} ${width} ${height}"/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${length} ${width} ${height}"/>
+        </geometry>
+        <material name="grey"/>
+      </visual>
+    </link>
+    
+    <joint name="${name}_link_to_body" type="fixed">
+      <parent link="${name}_link"/>
+      <child link="${name}_body"/>
+      <origin xyz="0 0 ${height/2.0}" rpy="0 0 0"/>
+    </joint>
+
+    <gazebo>
+      <static>true</static>
+    </gazebo>
+    
+    <gazebo reference="body1">
+      <material>Gazebo/Grey</material>
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+    </gazebo>
+    
+   <gazebo reference="body2">
+      <material>Gazebo/Grey</material>
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+    </gazebo>
+    
+   <gazebo reference="body3">
+      <material>Gazebo/Grey</material>
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+    </gazebo>
+    
+   <gazebo reference="body4">
+      <material>Gazebo/Grey</material>
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+    </gazebo>
+    
+  </xacro:macro>
+
+</root>

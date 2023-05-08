@@ -1,0 +1,37 @@
+<!-- -->
+<launch>
+
+  <arg name="circuit" default="full"/>
+
+  <arg name="spawn_road"          default="true"/>
+  <arg name="spawn_ceiling"       default="true"/>
+  <arg name="spawn_trafficlights" default="true"/>
+  <arg name="spawn_obstacles"     default="true"/>
+  <arg name="spawn_perimeter"     default="true"/>
+  <arg name="spawn_buildings"     default="true"/>
+
+  <include if="$(arg spawn_road)" file="$(find road_description)/launch/spawn_road.launch">
+    <arg name="circuit" value="$(arg circuit)"/>
+  </include>
+
+ <include if="$(arg spawn_ceiling)" file="$(find road_description)/launch/spawn_ceiling.launch">
+   <arg name="circuit" value="$(arg circuit)"/>
+ </include>
+
+  <include if="$(arg spawn_trafficlights)" file="$(find road_description)/launch/spawn_trafficlights.launch">
+    <arg name="circuit" value="$(arg circuit)"/>
+    <arg name="name" value="trafficlights_extra_example"/>
+  </include>
+
+
+  <include if="$(arg spawn_obstacles)" file="$(find road_description)/launch/spawn_obstacles_$(arg circuit).launch">
+  </include>
+
+  <include if="$(arg spawn_perimeter)" file="$(find road_description)/launch/spawn_perimeter_$(arg circuit).launch">
+  </include>
+
+  <include if="$(arg spawn_buildings)" file="$(find road_description)/launch/spawn_buildings.launch">
+    <arg name="circuit" value="$(arg circuit)"/>
+  </include>
+
+</launch>

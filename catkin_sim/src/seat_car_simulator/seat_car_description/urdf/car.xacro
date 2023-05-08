@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<robot name="seat_car" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Included URDF Files -->
+  <xacro:include filename="$(find seat_car_description)/urdf/include/materials.xacro" />
+
+  <xacro:include filename="$(find seat_car_description)/urdf/include/platform.xacro" />
+  <xacro:include filename="$(find seat_car_description)/urdf/include/platform.gazebo" />
+
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors.xacro" />
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors.gazebo" />
+
+  <!-- gazebo sensors -->
+  <!-- <xacro:include filename="$(find seat_car_description)/urdf/include/sensors/imu.gazebo" />
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors/laser.gazebo" />-->
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors/front_rgbd_camera1.gazebo" />
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors/front_rgbd_camera2.gazebo" />
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors/front_rgbd_camera3.gazebo" />
+  <xacro:include filename="$(find seat_car_description)/urdf/include/sensors/front_rgbd_camera4.gazebo" />
+  <!--<xacro:include filename="$(find seat_car_description)/urdf/include/sensors/front_rgb_camera.gazebo" />--> <!-- only rgb, no depth-->
+  <!--<xacro:include filename="$(find seat_car_description)/urdf/include/sensors/top_camera.gazebo" /> -->
+  <!--<xacro:include filename="$(find seat_car_description)/urdf/include/sensors/top_camera_nodist.gazebo" /> -->
+
+</robot>

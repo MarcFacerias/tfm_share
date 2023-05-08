@@ -1,0 +1,20 @@
+Header header
+
+float64 x_history_local_coords_from_initial_position
+float64 y_history_local_coords_from_initial_position
+float64 vel_history_ms
+float64 ref_velocity_ms
+float64 heading_history_deg
+float64 x_ref_tracking
+float64 y_ref_tracking
+float64 solved
+float64 x_interp_points_to_follow
+float64 y_interp_points_to_follow
+float64 pred_points_x_history
+float64 pred_points_y_history
+float64 rmse_cross_tracking
+float64 mse_cross_tracking
+float64 cross_tracking_error
+float64 cross_tracking_error_along_horizon
+# [Units Degrees]
+float32 steering_angle_cmd

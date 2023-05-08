@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="rosbag" output="screen" type="play" name="rosbag" args="--clock /home/marc/IRI_Internship/project_IDIADA/working/workspace_IDIADA/src/newBag.bag" />
+    <node pkg="lpv_mpc" type="GatherData.py" name="planner"/>
+
+</launch>

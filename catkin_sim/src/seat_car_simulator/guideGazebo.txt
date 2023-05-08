@@ -1,0 +1,5 @@
+This package contains the implementation of the IRI Seat Car Challenge simulator, most of the packages are devoted to solving certain parts of the challenge, but as I did not know if there was any cross dependency all of the were preserved. A simulated track and landmarks can be launched using simL.launch. We are using an empty world (empty.world) and then place on it a certain circuit(spawn_circuit.launch) and finally the car (spawn_car.launch)
+
+	
+	
+	

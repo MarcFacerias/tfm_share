@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="buildings" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.1415926535897931" />
+  <xacro:include filename="$(find road_description)/urdf/building/building_macro.xacro" />
+
+  <link name="$(arg parent)">
+  </link>
+<!--  
+  <xacro:building name="building1"
+                  parent="$(arg parent)"
+                  length="1.0"
+                  width="1.0"
+                  height="0.3">
+    <origin xyz="2.0 -2.0 0" rpy="0 0 ${PI/12}"/>
+  </xacro:building>
+-->
+
+</robot>

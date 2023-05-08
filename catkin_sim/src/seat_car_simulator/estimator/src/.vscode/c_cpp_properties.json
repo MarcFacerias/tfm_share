@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/marc/git/mrs_sim/PuzzleBot_Dynamic_Model/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/marc/git/mrs_sim/PuzzleBot_Dynamic_Model/src/mrs_localisation/include/**",
+        "/home/marc/git/mrs_sim/PuzzleBot_Dynamic_Model/src/puzzlebot_common/include/**",
+        "/home/marc/git/mrs_sim/PuzzleBot_Dynamic_Model/src/puzzlebot_sim/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

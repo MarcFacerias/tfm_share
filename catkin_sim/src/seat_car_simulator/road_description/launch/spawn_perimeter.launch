@@ -1,0 +1,40 @@
+<!-- -->
+<launch>
+  <arg name="name"  default="perimeter"/>
+  <arg name="x"     default="0.0"/>
+  <arg name="y"     default="0.0"/>
+  <arg name="z"     default="0.0"/>
+  <arg name="yaw"   default="0.0"/>
+  <arg name="length" default="12.0"/>
+  <arg name="width"  default="0.02"/>
+  <arg name="height" default="0.2"/>
+  <arg name="model" default="$(find road_description)/urdf/perimeter/perimeter.xacro"/>
+  <arg name="parent" default="$(arg name)_base_footprint"/>
+
+  <param name="$(arg name)_description" 
+         command="$(find xacro)/xacro --inorder '$(arg model)'
+                  name:=$(arg name)
+                  length:=$(arg length)
+                  width:=$(arg width)
+                  height:=$(arg height)
+                  parent:=$(arg parent)"
+                  />
+
+  <node name="$(arg name)_state_publisher"
+        pkg ="robot_state_publisher"
+        type="robot_state_publisher">
+    <!--<param name="tf_prefix" value="/$(arg name)" type="str" />-->
+    <remap from="robot_description" to="$(arg name)_description" />
+    <remap from="/joint_states" to="/$(arg name)/joint_states" />
+  </node>
+  
+  <node name="$(arg name)_spawn_urdf"
+        pkg ="gazebo_ros" 
+        type="spawn_model"
+        args="-param /$(arg name)_description -urdf -model $(arg name) -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw)">
+  </node>
+
+  <node name="$(arg name)_static_tf" pkg="tf" type="static_transform_publisher"
+        args="$(arg x) $(arg y) 0 $(arg yaw) 0 0 world $(arg parent) 100"/>
+
+</launch>

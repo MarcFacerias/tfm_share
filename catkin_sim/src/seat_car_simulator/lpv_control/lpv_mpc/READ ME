@@ -1,0 +1,33 @@
+SRC
+	controllerMain -> ROS node that uses objects created in ControllerObject to solve MPC problem and drive the vehicle. 
+	plotCarTrajectory -> visualization module
+	plannerMain -> MPC based planner
+	stateEstimator -> Old implementation of the LMI EKF in python 
+	vehicleSimulator -> simulator that solves the discrete system of eq 
+
+ControllerObject
+	PathFollowingLPV_MPC -> MPC implementation
+
+data
+	Observer_Gain -> all gain matrices are stored here, keep the folder structure and name of the files for proper imports. 
+
+Utilities
+	dataStructures -> clases used in the controller are defined (subscribers etc)
+	trackInitialization -> Spline-based planner
+	utilities -> useful functions 
+
+Others -> Old files used in certain tests with IDIADA
+	
+	GatherData or similar -> subscribes and stores information from certain topics
+	OnlineIntegration/TestRef -> Integrates a given plan to check correpondance between position and velocity
+	PublishData -> publishes signals at a given freq. (usually extracted from IDIADA Bagfiles)
+
+The rest of the folders inside lpv_control contain mostly message definitions or code used with the real robot (sensor libraries etc)
+
+	
+	
+
+
+
+	
+

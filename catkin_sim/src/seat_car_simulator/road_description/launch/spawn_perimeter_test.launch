@@ -1,0 +1,14 @@
+<!-- -->
+<launch>
+
+  <include file="$(find road_description)/launch/spawn_perimeter.launch">
+    <arg name="name" value="perimeter"/>
+    <arg name="x" value="0.0"/>
+    <arg name="y" value="-5.0"/>
+    <arg name="yaw" value="0.0"/>
+    <arg name="length" value="12.0"/>
+    <arg name="width"  value="0.02"/>
+    <arg name="height" value="0.2"/>
+  </include>
+
+</launch>

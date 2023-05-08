@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/marc/git/mrs_sim/PuzzleBot_Dynamic_Model/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/marc/git/mrs_sim/PuzzleBot_Dynamic_Model/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "files.associations": {
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
+    }
+}

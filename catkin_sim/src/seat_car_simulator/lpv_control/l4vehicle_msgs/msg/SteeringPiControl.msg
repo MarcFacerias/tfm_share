@@ -1,0 +1,27 @@
+Header header
+
+# Current feedback value of a P+I controller
+float32 steer_pi_ctrl_actl
+# Current error value of a P+I controller
+float32 steer_pi_ctrl_error
+float32 steer_pi_diff_error
+float32 steer_pi_ctrl_feed_forward
+float32 steer_pi_ctrl_integral_gain
+float32 steer_pi_ctrl_integral_term
+float32 steer_pi_ctrl_proportional_gain
+float32 steer_pi_ctrl_proportional_term
+float32 steer_pi_ctrl_derivative_gain
+float32 steer_pi_ctrl_derivative_term
+float32 steer_pi_ctrl_filtered_derivative_term
+
+# Current request value of a P+I controller
+float32 steer_pi_ctrl_rqst 
+float32 steer_pi_ctrl_action 
+float32 steer_pi_dr_ctrl_action 
+float32 steer_pi_ctrlr_intermediate
+
+#Limiter stuff
+float32 steer_modifier_increasing
+float32 steer_modifier_started_to_move
+float32 steer_modifier_was_stationary
+float32 steer_limiter_ctrl_output

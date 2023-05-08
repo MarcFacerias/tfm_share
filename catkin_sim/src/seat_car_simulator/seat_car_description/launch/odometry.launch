@@ -1,0 +1,22 @@
+<!-- -->
+<launch>
+  <arg name="x"     default="0.0"/>
+  <arg name="y"     default="-0.2"/>
+  <arg name="yaw"   default="0.0"/>
+  
+  <node pkg ="odometry" 
+        type="odometry_publisher"
+        name="odometry_publisher"
+        output="screen">
+          <param name="file_name" value="$(find seat_car_description)/calibration/SteerAngleActuator.xml" />
+          <param name="model_car_yaw" value="/yaw" />
+          <param name="model_car_twist" value="/twist" />
+          <param name="steering_command" value="/steering" />
+          <param name="initial_x" value="$(arg x)" />   <!--meters-->
+          <param name="initial_y" value="$(arg y)" />   <!--meters-->
+          <param name="initial_yaw" value="$(arg yaw)" /> <!--radian-->
+          <param name="bicycle_model" value="true" /> <!--use just bicycle model-->
+          <param name="servo_with_feedback" value="true" /> <!--use just bicycle model-->
+  </node>
+
+</launch>
